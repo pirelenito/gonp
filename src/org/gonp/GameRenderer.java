@@ -18,11 +18,12 @@ public class GameRenderer implements Renderer {
 
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
-
+		 gl.glViewport(0, 0, width, height);
 	}
 
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+	    gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		player = new Player(gl);
 	}
 
