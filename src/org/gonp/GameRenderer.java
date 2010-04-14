@@ -6,7 +6,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLSurfaceView.Renderer;
 
 public class GameRenderer implements Renderer {
-	Player player;
+	private final Player player = new Player();
 		
 	@Override
 	public void onDrawFrame(GL10 gl) {
@@ -24,7 +24,5 @@ public class GameRenderer implements Renderer {
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 	    gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
-		player = new Player(gl);
 	}
-
 }
