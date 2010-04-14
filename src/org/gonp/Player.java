@@ -21,17 +21,8 @@ public class Player {
 	private short[] indexes = {0,1,2,3,4,5};
 
 	public Player(GL10 gl) {
-		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(coordinates.length*4);
-		byteBuffer.order(ByteOrder.nativeOrder());
-		vertexBuffer = byteBuffer.asFloatBuffer();
-		vertexBuffer.put(coordinates);
-		vertexBuffer.position(0);
-		
-		ByteBuffer booBuffer = ByteBuffer.allocateDirect(indexes.length*2);
-		booBuffer.order(ByteOrder.nativeOrder());
-		indexBuffer = booBuffer.asShortBuffer();
-		indexBuffer.put(indexes);
-		indexBuffer.position(0);
+		vertexBuffer = BufferFactory.floatBuffer(coordinates);
+		indexBuffer = BufferFactory.shortBuffer(indexes);
 	}
 
 	public void render(GL10 gl) {
