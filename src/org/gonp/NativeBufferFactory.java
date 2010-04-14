@@ -1,11 +1,15 @@
 package org.gonp;
 
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 
-public class BufferFactory {
+/**
+ * Factory of {@link Buffer}s on {@link ByteOrder#nativeOrder()}.
+ */
+public class NativeBufferFactory {
 	public static FloatBuffer floatBuffer(float[] array) {
 		return (FloatBuffer) byteBuffer(array.length*Float.SIZE/8).asFloatBuffer()
 			.put(array)

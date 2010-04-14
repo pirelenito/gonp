@@ -6,7 +6,7 @@ import java.nio.ShortBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 public class Player {
-	private FloatBuffer vertexes = BufferFactory.floatBuffer(new float[] { 
+	private FloatBuffer vertexes = NativeBufferFactory.floatBuffer(new float[] { 
 			1, -1, 0,
 			0, -1, 0,
 			0, 0, 0,
@@ -15,7 +15,7 @@ public class Player {
 			1, 0, 0
 	});
 	
-	private ShortBuffer indexes = BufferFactory.shortBuffer(new short[] {
+	private ShortBuffer indexes = NativeBufferFactory.shortBuffer(new short[] {
 			0,1,2,3,4,5
 	});
 
