@@ -10,13 +10,11 @@ public class Player {
 			1, -1, 0,
 			0, -1, 0,
 			0, 0, 0,
-			0, 0, 0,
-			1, -1, 0,
 			1, 0, 0
 	});
 	
 	private ShortBuffer indexes = NativeBufferFactory.shortBuffer(new short[] {
-			0,1,2,3,4,5
+			0,1,2,2,0,3
 	});
 
 	public void render(GL10 gl) {
