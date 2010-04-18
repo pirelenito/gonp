@@ -8,6 +8,7 @@ import android.opengl.GLSurfaceView.Renderer;
 public class GameRenderer implements Renderer {
 	private final Player player1 = new Player();
 	private final Player player2 = new Player();
+	private final Ball ball = new Ball();
 		
 	@Override
 	public void onDrawFrame(GL10 gl) {
@@ -16,6 +17,7 @@ public class GameRenderer implements Renderer {
 		
 		player1.render(gl);
 		player2.render(gl);
+		ball.render(gl);
 	}
 
 	@Override
