@@ -3,6 +3,7 @@ package org.gonp;
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 public class Game extends Activity {
     private GLSurfaceView gl;
@@ -30,5 +31,11 @@ public class Game extends Activity {
     protected void onPause() {
     	super.onPause();
     	gl.onPause();
+    }
+    
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+    	gameRenderer.onTouchEvent(event);
+    	return true;
     }
 }
