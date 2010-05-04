@@ -37,7 +37,7 @@ public class Ball {
 	
 	public void render(GL10 gl) {
 		gl.glLoadIdentity();
-	    
+	    gl.glScalef(.1f, .1f, .1f);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexes);
 	    gl.glDrawElements(GL10.GL_TRIANGLES, indexes.capacity(), GL10.GL_UNSIGNED_SHORT, indexes);
 	}
